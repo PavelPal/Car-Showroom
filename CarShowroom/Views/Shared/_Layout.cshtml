@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+<div class="header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="user-menu">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa fa-user"></i> Мой аккаунт</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-heart"></i> Желаемые авто</a>
+                        </li>
+                        <li>
+                            <a href="cart.html"><i class="fa fa-shopping-cart"></i> Моя корзина</a>
+                        </li>
+                        <li>
+                            <a href="checkout.html"><i class="fa fa-bank"></i> Заказ</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sign-in"></i> Войти</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="header-right">
+                    <ul class="list-unstyled list-inline">
+                        <li class="dropdown dropdown-small">
+                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">
+                                <span class="key">валюта: </span><span class="value">BYR </span><b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">BYR</a>
+                                </li>
+                                <li>
+                                    <a href="#">USD</a>
+                                </li>
+                                <li>
+                                    <a href="#">EUR</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown dropdown-small">
+                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">
+                                <span class="key">язык: </span><span class="value">Русский </span><b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Русский</a>
+                                </li>
+                                <li>
+                                    <a href="#">Английский</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-branding-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="logo">
+                    <h1>
+                        <a href="/Home/Index">e<span>CarShowroom</span></a>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="shopping-item">
+                    <a href="cart.html">Корзина - <span class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        @Html.ActionLink("Главная", "Index", "Home")
+                    </li>
+                    <li>
+                        <a href="shop.html">Каталог</a>
+                    </li>
+                    <li>
+                        <a href="cart.html">Корзина</a>
+                    </li>
+                    <li>
+                        <a href="checkout.html">Заказ</a>
+                    </li>
+                    <li>
+                        <a href="#">Классы</a>
+                    </li>
+                    <li>
+                        <a href="#">Другое</a>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Контакты", "Contact", "Home")
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@RenderBody()
+
+<div class="footer-top-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-about-us">
+                    <h2>e<span>CarShowroom</span></h2>
+                    <p>eCarShowroom – это неиссякаемый источник новинок и премьер в автоиндустрии. Каталог автомобилей постоянно пополяется новинками, а наша география включает в себя не только Беларусь, но также ближнее и дальнее зарубежье. Наши эксперты помогут вам не только с выбором авто, но и с его правильным содержанием, а кроме того, расскажут об опыте владения самыми интересными экземплярами автомобильного мира.</p>
+                    <div class="footer-social">
+                        <a href="#" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                        <a href="#" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-menu">
+                    <h2 class="footer-wid-title">Меню пользователя</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Мой аккаунт</a>
+                        </li>
+                        <li>
+                            <a href="#">Моя корзина</a>
+                        </li>
+                        <li>
+                            <a href="#">История заказов</a>
+                        </li>
+                        <li>
+                            <a href="#">Желаемые авто</a>
+                        </li>
+                        <li>
+                            <a href="#">Контактная информация</a>
+                        </li>
+                        <li>
+                            <a href="#">Войти</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-menu">
+                    <h2 class="footer-wid-title">Классы автомобилей</h2>
+                    <ul>
+                        <li>
+                            <a href="#">A-класс</a>
+                        </li>
+                        <li>
+                            <a href="#">B-класс</a>
+                        </li>
+                        <li>
+                            <a href="#">C-класс</a>
+                        </li>
+                        <li>
+                            <a href="#">D-класс</a>
+                        </li>
+                        <li>
+                            <a href="#">E-класс</a>
+                        </li>
+                        <li>
+                            <a href="#">F-класс</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+                <div class="footer-newsletter">
+                    <h2 class="footer-wid-title">Рассылка</h2>
+                    <p>Присоединяйтесь к новостной рассылке и будьте в курсе все поступлений!</p>
+                    <div class="newsletter-form">
+                        <form action="#">
+                            <input type="email" placeholder="Введите Ваш email">
+                            <input type="submit" value="Подписаться">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-bottom-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="copyright">
+                    <p>
+                        <i class="fa fa-copyright"></i> 2016 eCarShowroom. All Rights Reserved. Coded with <i class="fa fa-heart"></i> by <a href="http://vk.com/paul_pal" target="_blank">Pavel Pauliushchyk</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="footer-card-icon">
+                    <i class="fa fa-cc-discover"></i>
+                    <i class="fa fa-cc-mastercard"></i>
+                    <i class="fa fa-cc-paypal"></i>
+                    <i class="fa fa-cc-visa"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/mui")
+@RenderSection("scripts", false)
+</body>
+</html>

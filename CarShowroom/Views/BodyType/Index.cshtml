@@ -1,0 +1,34 @@
+﻿@model IEnumerable<CarShowroom.Models.Entities.BodyType>
+
+@{
+    ViewBag.Title = "Типы кузова";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Body)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Update", new {id = item.Id}) |
+                @Html.ActionLink("Удалить", "Delete", new {id = item.Id})
+            </td>
+        </tr>
+    }
+
+</table>
