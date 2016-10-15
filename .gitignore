@@ -245,3 +245,4 @@ ModelManifest.xml
 .fake/
 *.sql
 *.docx
+/CarShowroom/ClassDiagram.cd

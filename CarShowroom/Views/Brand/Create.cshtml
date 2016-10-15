@@ -1,52 +1,60 @@
-﻿@model CarShowroom.Models.Entities.Brand
+﻿@model CarShowroom.Domain.Entities.Brand
 
 @{
-    ViewBag.Title = "CreateBrand";
+    ViewBag.Title = "Добавить производителя";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>CreateBrand</h2>
-
-
-@using (Html.BeginForm("Create", "Brand", FormMethod.Post, new {enctype = "multipart/form-data"}))
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>Brand</h4>
-        <hr/>
-        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-        <div class="form-group">
-            @Html.LabelFor(model => model.Body, new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Body, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            <input type="file" name="Image" size="40" accept="image/*">
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Country, new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Country, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.Country, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default"/>
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>@ViewBag.Title</h2>
+                </div>
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div>
+                    @Html.ActionLink("Вернуться назад", "Index")
+                </div>
+                @using (Html.BeginForm("Create", "Brand", FormMethod.Post, new {@class = "form-wrap", enctype = "multipart/form-data"}))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+                    <p class="form-row form-row-first form-row-full-width">
+                        @Html.LabelFor(m => m.Body)
+                        @Html.TextBoxFor(m => m.Body, new {@class = "input-text"})
+                        @Html.ValidationMessageFor(m => m.Body, "", new {@class = "text-danger"})
+                    </p>
+
+                    <p class="form-row form-row-last form-row-full-width">
+                        <input type="file" id="image" name="image" size="40" accept="image/*" class="inputfile" onchange='$("#upload-file-info").html($(this).val());'>
+                        <label id="upload-file-info" for="image">изображение</label>
+                        @Html.ValidationMessageFor(m => m.Image, "", new {@class = "text-danger"})
+                    </p>
+                    <div class="clear"></div>
+                    <p class="form-row form-row-first form-row-full-width">
+                        @Html.LabelFor(m => m.Country)
+                        @Html.TextBoxFor(m => m.Country, new {@class = "input-text"})
+                        @Html.ValidationMessageFor(m => m.Country, "", new {@class = "text-danger"})
+                    </p>
+
+                    <p class="form-row">
+                        <input type="submit" value="Добавить" class="button">
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

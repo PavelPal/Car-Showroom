@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
-using CarShowroom.Models.Entities;
-using CarShowroom.Models.Services;
+using CarShowroom.Domain.Abstract.Services;
+using CarShowroom.Domain.Entities;
 
 namespace CarShowroom.Controllers.Admin
 {
@@ -40,7 +40,8 @@ namespace CarShowroom.Controllers.Admin
             }
             else
             {
-                ModelState.AddModelError("Brand.Image", "Не выбрана картинка");
+                ModelState.AddModelError("Image", "Не выбрана картинка");
+                return View(brand);
             }
             _adminService.Create(brand);
             return RedirectToAction("Index");

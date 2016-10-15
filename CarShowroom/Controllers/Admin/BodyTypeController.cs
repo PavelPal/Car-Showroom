@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
-using CarShowroom.Models.Entities;
-using CarShowroom.Models.Services;
+using CarShowroom.Domain.Abstract.Services;
+using CarShowroom.Domain.Entities;
 
 namespace CarShowroom.Controllers.Admin
 {

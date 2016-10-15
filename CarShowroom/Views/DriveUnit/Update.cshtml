@@ -1,38 +1,49 @@
-﻿@model CarShowroom.Models.Entities.DriveUnit
+﻿@model CarShowroom.Domain.Entities.DriveUnit
 
 @{
-    ViewBag.Title = "UpdateDriveUnit";
+    ViewBag.Title = "Изменить: " + Model.Body;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>UpdateDriveUnit</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>DriveUnit</h4>
-        <hr/>
-        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
-        @Html.HiddenFor(model => model.Id)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Body, new {@class = "control-label col-md-2"})
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Body, new {htmlAttributes = new {@class = "form-control"}})
-                @Html.ValidationMessageFor(model => model.Body, "", new {@class = "text-danger"})
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default"/>
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>@ViewBag.Title</h2>
+                </div>
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div>
+                    @Html.ActionLink("Вернуться назад", "Index")
+                </div>
+                @using (Html.BeginForm("Update", "DriveUnit", FormMethod.Post, new {@class = "form-wrap"}))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+                    @Html.HiddenFor(model => model.Id)
+
+                    <p class="form-row form-row-first form-row-full-width">
+                        @Html.LabelFor(m => m.Body)
+                        @Html.TextBoxFor(m => m.Body, new {@class = "input-text"})
+                        @Html.ValidationMessageFor(m => m.Body, "", new {@class = "text-danger"})
+                    </p>
+
+                    <p class="form-row">
+                        <input type="submit" value="Изменить" class="button">
+                    </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

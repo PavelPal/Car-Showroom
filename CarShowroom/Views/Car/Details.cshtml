@@ -1,0 +1,315 @@
+﻿@model CarShowroom.Domain.ViewModels.CarViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+<h4>Car</h4>
+<hr/>
+<dl class="dl-horizontal">
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Name)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Name)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Cost)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Cost)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Discount)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Discount)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Count)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Count)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.DateCreated)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.DateCreated)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.DateAdded)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.DateAdded)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Width)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Width)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Height)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Height)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Length)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Length)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Wheelbase)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Wheelbase)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Clearance)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Clearance)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.TrunkVolume)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.TrunkVolume)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.FuelTankVolume)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.FuelTankVolume)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Weight)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Weight)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.DoorCount)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.DoorCount)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.EngineVolume)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.EngineVolume)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.CylindersCount)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.CylindersCount)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Supercharger)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Supercharger)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.EnginePower)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.EnginePower)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.MaxSpeed)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.MaxSpeed)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.TopGear)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.TopGear)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Acceleration)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Acceleration)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.FuelConsumption)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.FuelConsumption)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.SeatFinish)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.SeatFinish)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.ConditioningSystem)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.ConditioningSystem)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.AdjustableSteeringColumn)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.AdjustableSteeringColumn)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Heating)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Heating)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Navigation)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Navigation)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Signaling)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.Signaling)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.CruiseControl)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Car.CruiseControl)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.BodyType)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.BodyTypes.FirstOrDefault(b => Convert.ToInt32(b.Value) == Model.Car.BodyTypeId).Text)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Engine)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Engines.FirstOrDefault(b => Convert.ToInt32(b.Value) == Model.Car.EngineId).Text)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Transmission)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Transmissions.FirstOrDefault(b => Convert.ToInt32(b.Value) == Model.Car.TransmissionId).Text)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.DriveUnit)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.DriveUnits.FirstOrDefault(b => Convert.ToInt32(b.Value) == Model.Car.DriveUnitId).Text)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.CarType)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.CarTypes.FirstOrDefault(b => Convert.ToInt32(b.Value) == Model.Car.CarTypeId).Text)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Brand)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Brands.FirstOrDefault(b => Convert.ToInt32(b.Value) == Model.Car.BrandId).Text)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.Car.Headlight)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.Headlights.FirstOrDefault(b => Convert.ToInt32(b.Value) == Model.Car.HeadlightId).Text)
+</dd>
+
+</dl>
+</div>
+<p>
+    @Html.ActionLink("Изменить", "Update", new {id = Model.Car.Id}) |
+    @Html.ActionLink("Вернуться", "Index")
+</p>

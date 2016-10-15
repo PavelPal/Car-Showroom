@@ -1,5 +1,5 @@
 ﻿using System;
-using CarShowroom.Models;
+using CarShowroom.Domain;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;

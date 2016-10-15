@@ -1,5 +1,5 @@
 ﻿@using CarShowroom.Helpers
-@model CarShowroom.Models.ViewModels.IndexViewModel
+@model CarShowroom.Domain.ViewModels.IndexViewModel
 @{
     ViewBag.Title = "Главная";
 }
@@ -138,7 +138,12 @@
                                 <div class="product-f-image">
                                     <img src="@Url.Action("GetCarImage", "Image", new {item.Id})" alt="">
                                     <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> В корзину</a>
+                                        @using (Html.BeginForm("AddToCart", "Cart"))
+                                        {
+                                            @Html.Hidden("id", item.Id)
+                                            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                                            <button class="add-to-cart-link" type="submit"><i class="fa fa-shopping-cart"></i> В корзину</button>
+                                        }
                                         <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> Подробнее</a>
                                     </div>
                                 </div>
@@ -271,7 +276,6 @@
                         @foreach (var brand in Model.Brands)
                         {
                             @Html.InnerHtmlActonLink("<img src=\"" + Url.Action("GetBrandImage", "Image", new {brand.Id}) + "\">", "Brand", "Car", new {id = brand.Id}, null)
-                            ;
                         }
                     </div>
                 </div>

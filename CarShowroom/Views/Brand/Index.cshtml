@@ -1,46 +1,63 @@
-﻿@model IEnumerable<CarShowroom.Models.Entities.Brand>
+﻿@model IEnumerable<CarShowroom.Domain.Entities.Brand>
 
 @{
     ViewBag.Title = "Производители";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>
-    @Html.ActionLink("Добавить", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Body)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Country)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Body)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country)
-            </td>
-            <td>
-                @Html.ActionLink("Редактировать", "Update", new {id = item.Id}) |
-                @Html.ActionLink("Удалить", "Delete", new {id = item.Id})
-            </td>
-        </tr>
-    }
-
-</table>
+<div class="admin-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    @Html.ActionLink("Добавить", "Create", "Brand", null, new {@class = "custom-btn"})
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Body)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Image)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Country)
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Body)
+                            </td>
+                            <td>
+                                <img src="@Url.Action("GetBrandImage", "Image", new {item.Id})"/>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Country)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Редактировать", "Update", new {id = item.Id}) |
+                                @Html.ActionLink("Удалить", "Delete", new {id = item.Id})
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

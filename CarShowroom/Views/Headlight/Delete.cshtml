@@ -1,34 +1,51 @@
-﻿@model CarShowroom.Models.Entities.Headlight
+﻿@model CarShowroom.Domain.Entities.Headlight
 
 @{
-    ViewBag.Title = "DeleteHeadlight";
+    ViewBag.Title = "Удаилть: " + Model.Body;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>DeleteHeadlight</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Headlight</h4>
-    <hr/>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Body)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Body)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default"/> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
         </div>
-    }
+    </div>
+</div>
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div>
+                    @Html.ActionLink("Вернуться назад", "Index")
+                </div>
+                <div class="form-wrap">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Body)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Body)
+                        </dd>
+
+                    </dl>
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <p class="form-row">
+                            <input type="submit" value="Удалить" class="button">
+                        </p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

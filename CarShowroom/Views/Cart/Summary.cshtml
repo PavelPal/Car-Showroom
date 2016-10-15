@@ -1,0 +1,7 @@
+﻿@using CarShowroom.Helpers
+@model CarShowroom.Domain.Cart
+<div class="col-sm-6">
+    <div class="shopping-item">
+        @Html.InnerHtmlActonLink("Корзина - <span class=\"cart - amunt\"> " + Model.ComputeTotalValue() + "</span> <i class=\"fa fa-shopping-cart\"></i> <span class=\"product-count\">" + Model.Lines.Sum(x => x.Quantity) + "</span>", "Index", "Cart", new {returnUrl = Request.Url.PathAndQuery}, new {})
+    </div>
+</div>

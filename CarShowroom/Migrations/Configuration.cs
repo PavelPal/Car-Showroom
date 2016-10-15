@@ -1,5 +1,5 @@
 using System.Data.Entity.Migrations;
-using CarShowroom.Models;
+using CarShowroom.Domain;
 
 namespace CarShowroom.Migrations
 {

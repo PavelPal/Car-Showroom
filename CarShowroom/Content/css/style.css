@@ -203,7 +203,7 @@ body { font-family: "Roboto", sans-serif; }
 
 .slider-area { clear: both }
 
-.slider-area, .promo-area, .brands-area, .maincontent-area, .footer-top-area, .product-widget-area, .product-breadcroumb-area, .single-product-area {
+.slider-area, .promo-area, .brands-area, .maincontent-area, .footer-top-area, .product-widget-area, .product-breadcroumb-area, .single-product-area, .admin-area {
     overflow: hidden;
     position: relative;
 }
@@ -303,11 +303,37 @@ body { font-family: "Roboto", sans-serif; }
     text-decoration: none;
 }
 
+.custom-btn {
+    background: none repeat scroll 0 0 #1abc9c;
+    border: 1px solid #1abc9c;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 25px;
+    text-transform: uppercase;
+}
+
+.custom-btn:hover {
+    background: #222;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+}
+
 .promo-area {
     background: none repeat scroll 0 0 #1abc9c;
     color: #fff;
     padding: 77px 0 200px;
 }
+
+.admin-area {
+    background: none repeat scroll 0 0 #fff;
+    padding: 80px 0 200px;
+}
+
+.admin-area h2 { color: #fff; }
+
+.admin-area .zigzag-bottom { background: #333; }
 
 .brands-area {
     background: none repeat scroll 0 0 #1abc9c;
@@ -365,7 +391,7 @@ body { font-family: "Roboto", sans-serif; }
     width: 100%;
 }
 
-.product-hover a {
+.product-hover a, .product-hover button {
     background: none repeat scroll 0 0 #1abc9c;
     border: 1px solid #1abc9c;
     border-radius: 5px;
@@ -383,7 +409,8 @@ body { font-family: "Roboto", sans-serif; }
     z-index: 99;
 }
 
-.product-hover a:hover {
+.product-hover a:hover,
+.product-hover button:hover {
     background: #000;
     border-color: #444;
     text-decoration: none;
@@ -396,9 +423,9 @@ body { font-family: "Roboto", sans-serif; }
     text-decoration: none;
 }
 
-.product-hover a i.fa { margin-right: 5px; }
+.product-hover a i.fa, .product-hover button i.fa { margin-right: 5px; }
 
-.product-hover a.add-to-cart-link { top: -25%; }
+.product-hover form button.add-to-cart-link { top: -25%; }
 
 .product-hover a.view-details-link { bottom: -25%; }
 
@@ -418,7 +445,7 @@ body { font-family: "Roboto", sans-serif; }
 
 .single-product { overflow: hidden; }
 
-.single-product:hover .product-hover a.add-to-cart-link { top: 32%; }
+.single-product:hover .product-hover form button.add-to-cart-link { top: 32%; }
 
 .single-product:hover .product-hover a.view-details-link { bottom: 32%; }
 
@@ -680,7 +707,7 @@ ol.slide-indicators li.active {
 
 .copyright > p { margin: 10px 0 0; }
 
-.product-big-title-area { background: url(img/crossword.png) repeat scroll 0 0 #1ABC9C }
+.product-big-title-area { background: url(../img/crossword.png) repeat scroll 0 0 #1ABC9C }
 
 .product-bit-title h2 {
     color: #fff;
@@ -1112,23 +1139,23 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button { backgrou
     width: 40%;
 }
 
-#login-form-wrap, #coupon-collapse-wrap {
+#login-form-wrap, #coupon-collapse-wrap, .form-wrap {
     background: none repeat scroll 0 0 #f4f4f4;
     margin-bottom: 30px;
     padding: 25px;
 }
 
-#login-form-wrap label {
+#login-form-wrap label, .form-wrap label {
     display: block;
     margin-bottom: 5px;
 }
 
-#login-form-wrap input[type="text"], #login-form-wrap input[type="password"] {
+#login-form-wrap input[type="text"], #login-form-wrap input[type="password"], .form-wrap input[type="text"] {
     margin-bottom: 10px;
     width: 250px;
 }
 
-#login-form-wrap input[type="submit"] { margin-bottom: 15px; }
+#login-form-wrap input[type="submit"], .form-wrap input[type="submit"] { margin-bottom: 15px; }
 
 .single-shop-product h2 {
     font-size: 20px;
@@ -1142,3 +1169,91 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button { backgrou
 .pagination > li > a, .pagination > li > span { color: #1abc9c; }
 
 .back-video { width: 100%; }
+
+.admin-action-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.admin-action-block div.panel {
+    -ms-border-radius: 0;
+    border-radius: 0;
+    margin: 5px;
+    width: calc(33% - 10px);
+}
+
+.admin-action-block div.panel div.panel-heading,
+.admin-action-block div.panel div.panel-footer { background: #fff; }
+
+.admin-action-block div.panel div.panel-body {
+    height: 100px;
+    padding: 0;
+}
+
+.cars-background,
+.brands-background,
+.body-types-background,
+.car-types-background,
+.drive-units-background,
+.engines-background,
+.headlights-background,
+.transmissions-background {
+    -ms-background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.cars-background { background-image: url(../img/admin/cars.jpg); }
+
+.brands-background { background-image: url(../img/admin/brands.jpg); }
+
+.body-types-background { background-image: url(../img/admin/body.jpg); }
+
+.car-types-background { background-image: url(../img/admin/car-types.jpg); }
+
+.drive-units-background { background-image: url(../img/admin/drive-unit.jpg); }
+
+.engines-background { background-image: url(../img/admin/engine.jpg); }
+
+.headlights-background { background-image: url(../img/admin/headlights.jpg); }
+
+.transmissions-background { background-image: url(../img/admin/transmission.jpg); }
+
+.inputfile {
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 0.1px;
+    z-index: -1;
+}
+
+.inputfile + label {
+    background-color: #1abc9c;
+    border: 1px solid #1abc9c;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 6px 25px;
+    text-transform: uppercase;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background: #222;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+}
+
+.inputfile + label * { pointer-events: none; }
+
+.form-row img { margin: 0 auto; }
+
+.form-row-full-width input[type="text"] { width: 100%; }

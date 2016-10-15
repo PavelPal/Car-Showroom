@@ -1,17 +1,18 @@
 ﻿using System.Web.Mvc;
-using CarShowroom.Models.Dao;
-using CarShowroom.Models.Entities;
+using CarShowroom.Domain.Abstract.Dao;
+using CarShowroom.Domain.Concrete;
+using CarShowroom.Domain.Entities;
 
 namespace CarShowroom.Controllers
 {
     public class ImageController : Controller
     {
         private readonly IImageDao _imageDao;
-        private readonly UnitOfWork<Brand> _unitOfWork;
+        private readonly Repository<Brand> _repository;
 
         public ImageController(IImageDao imageDao)
         {
-            _unitOfWork = new UnitOfWork<Brand>();
+            _repository = new Repository<Brand>();
             _imageDao = imageDao;
         }
 
@@ -21,7 +22,7 @@ namespace CarShowroom.Controllers
             {
                 return null;
             }
-            var item = _unitOfWork.EntityDao.Get(id.Value);
+            var item = _repository.EntityDao.Get(id.Value);
             return item != null ? File(item.Image, item.ImageType) : null;
         }
 

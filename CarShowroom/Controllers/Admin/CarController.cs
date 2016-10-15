@@ -1,7 +1,9 @@
-﻿using System.Web.Mvc;
-using CarShowroom.Models.Entities;
-using CarShowroom.Models.Services;
-using CarShowroom.Models.ViewModels;
+﻿using System.Collections.Generic;
+using System.Web;
+using System.Web.Mvc;
+using CarShowroom.Domain.Abstract.Services;
+using CarShowroom.Domain.Entities;
+using CarShowroom.Domain.ViewModels;
 
 namespace CarShowroom.Controllers.Admin
 {
@@ -28,7 +30,9 @@ namespace CarShowroom.Controllers.Admin
         }
 
         [HttpPost]
-        public ActionResult Create(Car car)
+        public ActionResult Create(Car car, HttpPostedFileBase image1 = null,
+            HttpPostedFileBase image2 = null, HttpPostedFileBase image3 = null,
+            HttpPostedFileBase image4 = null)
         {
             if (!ModelState.IsValid)
             {
@@ -36,8 +40,42 @@ namespace CarShowroom.Controllers.Admin
                 model.Car = car;
                 return View(model);
             }
-            _adminService.Create(car);
+            if (image1 != null && image2 != null && image3 != null && image4 != null)
+            {
+                _adminService.Create(car);
+                var imageList = new List<HttpPostedFileBase> {image1, image2, image3, image4};
+                foreach (var image in imageList)
+                {
+                    var carImage = new CarImage
+                    {
+                        ImageType = image.ContentType,
+                        Image = new byte[image.ContentLength],
+                        CarId = car.Id
+                    };
+                    image.InputStream.Read(carImage.Image, 0, image.ContentLength);
+                    _adminService.Create(carImage);
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("CarImages", "Не выбрана картинка");
+                var model = new CarViewModel();
+                model.Car = car;
+                return View(model);
+            }
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Details(int? id)
+        {
+            if (id == null || _adminService.Get<Car>(id.Value) == null)
+            {
+                return RedirectToAction("Index");
+            }
+            var model = new CarViewModel();
+            model.Car = _adminService.Get<Car>(id.Value);
+            return View(model);
         }
 
         [HttpGet]

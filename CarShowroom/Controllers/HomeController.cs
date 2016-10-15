@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using CarShowroom.Models.Services;
+using CarShowroom.Domain.Abstract.Services;
 
 namespace CarShowroom.Controllers
 {

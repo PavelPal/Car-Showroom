@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,8 +54,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
@@ -185,6 +185,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Binders\CartModelBinder.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\Admin\BodyTypeController.cs" />
@@ -195,6 +196,7 @@
     <Compile Include="Controllers\Admin\EngineController.cs" />
     <Compile Include="Controllers\Admin\HeadlightController.cs" />
     <Compile Include="Controllers\Admin\TransmissionController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -208,31 +210,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\ApplicationDbInitializer.cs" />
-    <Compile Include="Models\Dao\Dao.cs" />
-    <Compile Include="Models\Dao\IDao.cs" />
-    <Compile Include="Models\Dao\IImageDao.cs" />
-    <Compile Include="Models\Dao\ImageDao.cs" />
-    <Compile Include="Models\Dao\UnitOfWork.cs" />
-    <Compile Include="Models\Entities\BodyType.cs" />
-    <Compile Include="Models\Entities\Brand.cs" />
-    <Compile Include="Models\Entities\Engine.cs" />
-    <Compile Include="Models\Entities\Car.cs" />
-    <Compile Include="Models\Entities\CarType.cs" />
-    <Compile Include="Models\Entities\DriveUnit.cs" />
-    <Compile Include="Models\Entities\Headlight.cs" />
-    <Compile Include="Models\Entities\CarImage.cs" />
-    <Compile Include="Models\Entities\Order.cs" />
-    <Compile Include="Models\Entities\Review.cs" />
-    <Compile Include="Models\Entities\Transmission.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Services\AdminService.cs" />
-    <Compile Include="Models\Services\HomeService.cs" />
-    <Compile Include="Models\Services\IAdminService.cs" />
-    <Compile Include="Models\Services\IHomeService.cs" />
-    <Compile Include="Models\ViewModels\CarViewModel.cs" />
-    <Compile Include="Models\ViewModels\IndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -252,26 +230,26 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\img\admin\body.jpg" />
+    <Content Include="Content\img\admin\brands.jpg" />
+    <Content Include="Content\img\admin\car-types.jpg" />
+    <Content Include="Content\img\admin\cars.jpg" />
+    <Content Include="Content\img\admin\drive-unit.jpg" />
+    <Content Include="Content\img\admin\engine.jpg" />
+    <Content Include="Content\img\admin\headlights.jpg" />
+    <Content Include="Content\img\admin\transmission.jpg" />
     <Content Include="Content\img\audi-brand.jpg" />
-    <Content Include="Content\img\audi.png" />
     <Content Include="Content\img\bentley-brand.jpg" />
-    <Content Include="Content\img\bentley.png" />
     <Content Include="Content\img\bmw-brand.jpg" />
-    <Content Include="Content\img\bmw.png" />
+    <Content Include="Content\img\crossword.png" />
     <Content Include="Content\img\jaguar-brand.jpg" />
-    <Content Include="Content\img\jaguar.jpg" />
     <Content Include="Content\img\land-rover-brand.jpg" />
-    <Content Include="Content\img\land-rover.png" />
     <Content Include="Content\img\mercedes-benz-brand.jpg" />
-    <Content Include="Content\img\mercedes-benz.jpg" />
     <Content Include="Content\img\porsche-brand.jpg" />
-    <Content Include="Content\img\porsche.jpg" />
     <Content Include="Content\img\slides\slide-2.jpg" />
     <Content Include="Content\img\slides\slide-3.jpg" />
     <Content Include="Content\img\tesla-brand.jpg" />
-    <Content Include="Content\img\tesla.png" />
     <Content Include="Content\img\volvo-brand.jpg" />
-    <Content Include="Content\img\volvo.jpg" />
     <Content Include="Content\video\commander.mp4" />
     <Content Include="Content\video\revolutionize.jpg" />
     <Content Include="Content\video\revolutionize.mp4" />
@@ -295,8 +273,13 @@
     <Content Include="Scripts\functions.js" />
     <None Include="Scripts\jquery-2.2.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
-    <Content Include="Scripts\jquery-2.2.4.min.js" />
-    <Content Include="Scripts\jquery-2.2.4.min.map" />
+    <None Include="Scripts\jquery-3.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.0.js" />
+    <Content Include="Scripts\jquery-3.1.0.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.js" />
+    <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.0.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.easing.1.3.min.js" />
     <Content Include="Scripts\jquery.sticky.js" />
@@ -381,6 +364,9 @@
     <Content Include="Views\Transmission\Update.cshtml" />
     <Content Include="Views\Car\Update.cshtml" />
     <Content Include="Views\Car\Delete.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\Summary.cshtml" />
+    <Content Include="Views\Car\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Image\" />
@@ -392,6 +378,15 @@
     <EmbeddedResource Include="Migrations\201606271646163_DataMigration.resx">
       <DependentUpon>201606271646163_DataMigration.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarShowroom.Domain\CarShowroom.Domain.csproj">
+      <Project>{2a861bbf-99d5-414b-bd16-f01db96e1ef3}</Project>
+      <Name>CarShowroom.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -425,8 +420,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

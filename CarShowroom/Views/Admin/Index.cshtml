@@ -3,11 +3,98 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.ActionLink("Автомобили", "Index", "Car")
-@Html.ActionLink("Производители", "Index", "Brand")
-@Html.ActionLink("Типы кузова", "Index", "BodyType")
-@Html.ActionLink("Типы автомобиля", "Index", "CarType")
-@Html.ActionLink("Типы привода", "Index", "DriveUnit")
-@Html.ActionLink("Типы двигателя", "Index", "Engine")
-@Html.ActionLink("Типы фар", "Index", "Headlight")
-@Html.ActionLink("Типы каробки передач", "Index", "Transmission")
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="admin-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="admin-action-block">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Автомобили</div>
+                        <div class="panel-body">
+                            <div class="cars-background"></div>
+                        </div>
+                        <div class="panel-footer">
+                            @Html.ActionLink("Перейти", "Index", "Car", null, new {@class = "custom-btn"})
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Производители</div>
+                        <div class="panel-body">
+                            <div class="brands-background"></div>
+                        </div>
+                        <div class="panel-footer">
+                            @Html.ActionLink("Перейти", "Index", "Brand", null, new {@class = "custom-btn"})
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Типы кузова</div>
+                        <div class="panel-body">
+                            <div class="body-types-background"></div>
+                        </div>
+                        <div class="panel-footer">
+                            @Html.ActionLink("Перейти", "Index", "BodyType", null, new {@class = "custom-btn"})
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Типы автомобиля</div>
+                        <div class="panel-body">
+                            <div class="car-types-background"></div>
+                        </div>
+                        <div class="panel-footer">
+                            @Html.ActionLink("Перейти", "Index", "CarType", null, new {@class = "custom-btn"})
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Типы привода</div>
+                        <div class="panel-body">
+                            <div class="drive-units-background"></div>
+                        </div>
+                        <div class="panel-footer">
+                            @Html.ActionLink("Перейти", "Index", "DriveUnit", null, new {@class = "custom-btn"})
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Типы двигателя</div>
+                        <div class="panel-body">
+                            <div class="engines-background"></div>
+                        </div>
+                        <div class="panel-footer">
+                            @Html.ActionLink("Перейти", "Index", "Engine", null, new {@class = "custom-btn"})
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Типы фар</div>
+                        <div class="panel-body">
+                            <div class="headlights-background"></div>
+                        </div>
+                        <div class="panel-footer">
+                            @Html.ActionLink("Перейти", "Index", "Headlight", null, new {@class = "custom-btn"})
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Типы каробки передач</div>
+                        <div class="panel-body">
+                            <div class="transmissions-background"></div>
+                        </div>
+                        <div class="panel-footer">
+                            @Html.ActionLink("Перейти", "Index", "Transmission", null, new {@class = "custom-btn"})
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,322 +1,74 @@
-﻿@model CarShowroom.Models.Entities.Car
+﻿@model CarShowroom.Domain.Entities.Car
 
 @{
-    ViewBag.Title = "DeleteCar";
+    ViewBag.Title = "Удалить: " + Model.Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>DeleteCar</h2>
-
-<h3>Are you sure you want to delete this?</h3>
-<div>
-<h4>Car</h4>
-<hr/>
-<dl class="dl-horizontal">
-<dt>
-    @Html.DisplayNameFor(model => model.Name)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Name)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Cost)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Cost)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Discount)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Discount)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Count)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Count)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.DateCreated)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.DateCreated)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.DateAdded)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.DateAdded)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Width)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Width)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Height)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Height)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Length)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Length)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Wheelbase)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Wheelbase)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Clearance)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Clearance)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.TrunkVolume)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.TrunkVolume)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.FuelTankVolume)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.FuelTankVolume)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Weight)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Weight)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.DoorCount)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.DoorCount)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.EngineVolume)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.EngineVolume)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.CylindersCount)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.CylindersCount)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Supercharger)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Supercharger)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.EnginePower)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.EnginePower)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.MaxSpeed)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.MaxSpeed)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.TopGear)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.TopGear)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Acceleration)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Acceleration)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.FuelConsumption)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.FuelConsumption)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.SeatFinish)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.SeatFinish)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.ConditioningSystem)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.ConditioningSystem)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.AdjustableSteeringColumn)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.AdjustableSteeringColumn)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Heating)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Heating)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Navigation)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Navigation)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.Signaling)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.Signaling)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.CruiseControl)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.CruiseControl)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.BodyTypeId)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.BodyTypeId)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.EngineId)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.EngineId)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.TransmissionId)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.TransmissionId)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.DriveUnitId)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.DriveUnitId)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.CarTypeId)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.CarTypeId)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.BrandId)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.BrandId)
-</dd>
-
-<dt>
-    @Html.DisplayNameFor(model => model.HeadlightId)
-</dt>
-
-<dd>
-    @Html.DisplayFor(model => model.HeadlightId)
-</dd>
-
-</dl>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-actions no-color">
-        <input type="submit" value="Delete" class="btn btn-default"/> |
-        @Html.ActionLink("Back to List", "Index")
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>@ViewBag.Title</h2>
+                </div>
+            </div>
+        </div>
     </div>
-}
+</div>
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div>
+                    @Html.ActionLink("Вернуться назад", "Index")
+                </div>
+                <div class="form-wrap">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Cost)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Cost)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Discount)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Discount)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Count)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Count)
+                        </dd>
+
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <p class="form-row">
+                                <input type="submit" value="Удалить" class="button">
+                            </p>
+                        }
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

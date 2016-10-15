@@ -1,9 +1,9 @@
-﻿using System.Data.Entity;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using CarShowroom.Models;
+using CarShowroom.Binders;
+using CarShowroom.Domain;
 
 namespace CarShowroom
 {
@@ -16,6 +16,7 @@ namespace CarShowroom
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
         }
     }
 }

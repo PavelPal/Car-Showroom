@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Web;
 using CarShowroom;
-using CarShowroom.Models.Dao;
-using CarShowroom.Models.Services;
+using CarShowroom.Domain.Abstract.Dao;
+using CarShowroom.Domain.Abstract.Services;
+using CarShowroom.Domain.Concrete.Dao;
+using CarShowroom.Domain.Services;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
